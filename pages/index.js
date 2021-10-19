@@ -60,7 +60,7 @@ const Home = () => (
             maxWidth="100px"
             display="inline-block"
             borderRadius="full"
-            src="/images/takuya.jpg"
+            src="/images/daniel_1.jpg"
             alt="Profile image"
           />
         </Box>
@@ -75,12 +75,7 @@ const Home = () => (
           passion for building digital services/stuff he wants. He has a knack
           for all things launching products, from planning and designing all the
           way to solving real-life problems with code. When not online, he loves
-          hanging out with his camera. Currently, he is living off of his own
-          product called{' '}
-          <NextLink href="/works/inkdrop">
-            <Link>Inkdrop</Link>
-          </NextLink>
-          .
+          hanging out with his camera. Currently, he is fulltime mobile developer.
         </Paragraph>
         <Box align="center" my={4}>
           <NextLink href="/works">
@@ -96,22 +91,24 @@ const Home = () => (
           Bio
         </Heading>
         <BioSection>
-          <BioYear>1984</BioYear>
-          Born in Osaka (大阪), Japan.
+          <BioYear>1998</BioYear>
+          Born in Tien Giang Province, Viet Nam.
         </BioSection>
         <BioSection>
-          <BioYear>2010</BioYear>
-          Completed the Master&apos;s Program in the Graduate School of
-          Information Science at Nara Institute of Science and Technology
-          (奈良先端科学技術大学院大学情報科学研究科修士課程)
+          <BioYear>3/2019</BioYear>
+          Worked at THL Software, Viet Nam.
         </BioSection>
         <BioSection>
-          <BioYear>2010</BioYear>
-          Worked at Yahoo! Japan (ヤフー株式会社入社)
+          <BioYear>6/2020</BioYear>
+          Worked at Atman Vina, Viet Nam.
         </BioSection>
         <BioSection>
-          <BioYear>2012 to present</BioYear>
-          Works as a freelance
+          <BioYear>11/2020</BioYear>
+          Graduated in information technology from Ho Chi Minh University of Natural Resources and Environment.
+        </BioSection>
+        <BioSection>
+          <BioYear>4/2021 to present</BioYear>
+          Works at Neo Consulting and works as a freelancer.
         </BioSection>
       </Section>
 
@@ -120,15 +117,7 @@ const Home = () => (
           I ♥
         </Heading>
         <Paragraph>
-          Art, Music,{' '}
-          <Link href="https://illust.odoruinu.net/" target="_blank">
-            Drawing
-          </Link>
-          , Playing Drums,{' '}
-          <Link href="https://500px.com/p/craftzdog" target="_blank">
-            Photography
-          </Link>
-          , Leica, Machine Learning
+          Art, Music, Playing Sport, Mobile, Technology
         </Paragraph>
       </Section>
 
@@ -201,13 +190,6 @@ const Home = () => (
             thumbnail={thumbYouTube}
           >
             My YouTube channel
-          </GridItem>
-          <GridItem
-            href="https://www.inkdrop.app/"
-            title="Inkdrop"
-            thumbnail={thumbInkdrop}
-          >
-            A Markdown note-taking app
           </GridItem>
         </SimpleGrid>
 

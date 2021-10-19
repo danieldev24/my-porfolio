@@ -53,7 +53,7 @@ const VoxelDog = () => {
 
       // 640 -> 240
       // 8   -> 6
-      const scale = scH * 0.005 + 4.8
+      const scale = scH * 0.009 + 12.8
       const camera = new THREE.OrthographicCamera(
         -scale,
         scale,
@@ -66,7 +66,7 @@ const VoxelDog = () => {
       camera.lookAt(target)
       setCamera(camera)
 
-      const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
+      const ambientLight = new THREE.AmbientLight(0xFFFFFF, 1)
       scene.add(ambientLight)
 
       const controls = new OrbitControls(camera, renderer.domElement)
@@ -74,7 +74,7 @@ const VoxelDog = () => {
       controls.target = target
       setControls(controls)
 
-      loadGLTFModel(scene, '/dog.glb', {
+      loadGLTFModel(scene, '/scene2.glb', {
         receiveShadow: false,
         castShadow: false
       }).then(() => {
