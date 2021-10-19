@@ -19,13 +19,10 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
 import {
-  IoLogoTwitter,
-  IoLogoInstagram,
   IoLogoGithub,
-  IoLogoDiscord
+  IoLogoLinkedin
 } from 'react-icons/io5'
 import thumbYouTube from '../public/images/links/youtube.png'
-import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
 
 const Home = () => (
   <Layout>
@@ -91,10 +88,6 @@ const Home = () => (
           Bio
         </Heading>
         <BioSection>
-          <BioYear>1998</BioYear>
-          Born in Tien Giang Province, Viet Nam.
-        </BioSection>
-        <BioSection>
           <BioYear>3/2019</BioYear>
           Worked at THL Software, Viet Nam.
         </BioSection>
@@ -103,7 +96,7 @@ const Home = () => (
           Worked at Atman Vina, Viet Nam.
         </BioSection>
         <BioSection>
-          <BioYear>11/2020</BioYear>
+          <BioYear>8/2020</BioYear>
           Graduated in information technology from Ho Chi Minh University of Natural Resources and Environment.
         </BioSection>
         <BioSection>
@@ -127,57 +120,24 @@ const Home = () => (
         </Heading>
         <List>
           <ListItem>
-            <Link href="https://github.com/craftzdog" target="_blank">
+            <Link href="https://github.com/danieldev24" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
                 leftIcon={<Icon as={IoLogoGithub} />}
               >
-                @craftzdog
+                @danieldev24
               </Button>
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="https://twitter.com/inkdrop_app" target="_blank">
+            <Link href="https://www.linkedin.com/in/hoangson24198/" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
-                leftIcon={<Icon as={IoLogoTwitter} />}
+                leftIcon={<Icon as={IoLogoLinkedin} />}
               >
-                @inkdrop_app
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://twitter.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<Icon as={IoLogoTwitter} />}
-              >
-                @craftzdog
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://instagram.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<Icon as={IoLogoInstagram} />}
-              >
-                @craftzdog
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://discord.gg/QfsG5Kj" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<Icon as={IoLogoDiscord} />}
-              >
-                Discord
+                @hoangson24198
               </Button>
             </Link>
           </ListItem>
