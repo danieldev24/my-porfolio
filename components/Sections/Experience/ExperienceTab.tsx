@@ -50,7 +50,7 @@ const ExperienceTab = () => {
       <TabList
         width={isMobile ? '100%' : '30%'}
         borderColor="transparent"
-        overflowX={isMobile ? 'auto' : 'hidden'}
+        overflowX={isMobile ? 'scroll' : 'hidden'}
         overflowY="hidden"
       >
         {ExperiencesList.map((company) => (
