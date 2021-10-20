@@ -21,7 +21,6 @@ import {
 import { BiRightArrow } from 'react-icons/bi'
 import { ExperiencesList } from 'config/experience'
 import { mobileBreakpointsMap } from 'config/theme'
-import { ClassNames } from '@emotion/react'
 
 const ExperienceTab = () => {
   const { colorMode } = useColorMode()
@@ -48,8 +47,12 @@ const ExperienceTab = () => {
 
   return (
     <Tabs id="experienceTabs" orientation={tabOrientation} isLazy>
-      <TabList width={isMobile ?'100%' : '30%'} borderColor="transparent" overflowX ={isMobile ? 'auto' : 'hidden'}
-      overflowY = 'hidden'>
+      <TabList
+        width={isMobile ? '100%' : '30%'}
+        borderColor="transparent"
+        overflowX={isMobile ? 'auto' : 'hidden'}
+        overflowY="hidden"
+      >
         {ExperiencesList.map((company) => (
           <Tab
             key={`Tab-${company.name}`}
