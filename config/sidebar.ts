@@ -4,6 +4,8 @@ import {
   FaLinkedin,
   FaGithub,
   FaDev,
+  FaDownload,
+  FaFileDownload,
 } from 'react-icons/fa'
 
 type SocialMedia = {
@@ -32,5 +34,10 @@ export const SocialMedias: SocialMedia[] = [
     label: 'Dev.to',
     href: 'https://dev.to/sondaniel',
     icon: FaDev,
+  },
+  {
+    label: 'CV',
+    href: './LeTranHoangSonCV.pdf',
+    icon: FaFileDownload,
   },
 ]
