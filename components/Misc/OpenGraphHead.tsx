@@ -12,10 +12,7 @@ const OpenGraphHead = () => (
       content="Howdy! I am Hoang Son. Or you could call me Daniel. I am a Mobile Developer"
     />
     <meta property="og:type" content="profile" />
-    <meta
-      property="og:image"
-      content="/hs_avatar.png"
-    ></meta>
+    <meta property="og:image" content="/hs_avatar.png"></meta>
   </Head>
 )
 export default OpenGraphHead
