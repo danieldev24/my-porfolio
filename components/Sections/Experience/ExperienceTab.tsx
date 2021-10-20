@@ -20,6 +20,8 @@ import {
 } from '@chakra-ui/react'
 import { BiRightArrow } from 'react-icons/bi'
 import { ExperiencesList } from 'config/experience'
+import { mobileBreakpointsMap } from 'config/theme'
+import { ClassNames } from '@emotion/react'
 
 const ExperienceTab = () => {
   const { colorMode } = useColorMode()
@@ -42,10 +44,12 @@ const ExperienceTab = () => {
     lg: 'auto',
     xl: 'auto',
   })
+  const isMobile = useBreakpointValue(mobileBreakpointsMap)
 
   return (
     <Tabs id="experienceTabs" orientation={tabOrientation} isLazy>
-      <TabList width={'30%'} borderColor="transparent">
+      <TabList width={isMobile ?'100%' : '30%'} borderColor="transparent" overflowX ={isMobile ? 'auto' : 'hidden'}
+      overflowY = 'hidden'>
         {ExperiencesList.map((company) => (
           <Tab
             key={`Tab-${company.name}`}
