@@ -46,8 +46,8 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
         What i do.
       </Heading>
       <Text variant="description">
-        I`ve been coding professionally for over {professionalYears} years now and
-        currently working as a <b>Mobile Developer</b> that focuses on{' '}
+        I`ve been coding professionally for over {professionalYears} years now
+        and currently working as a <b>Mobile Developer</b> that focuses on{' '}
         <b>Android</b>,{' '}
         <Tooltip
           label="Ha!. I focus on Flutter with GetX Pattern"
