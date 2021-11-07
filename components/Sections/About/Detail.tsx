@@ -46,7 +46,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
         What i do.
       </Heading>
       <Text variant="description">
-        I`ve been coding professionally for {professionalYears} years now and
+        I`ve been coding professionally for over {professionalYears} years now and
         currently working as a <b>Mobile Developer</b> that focuses on{' '}
         <b>Android</b>,{' '}
         <Tooltip
@@ -96,7 +96,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
         <List spacing={3}>
           <ListItem fontSize="small" display="flex" alignItems="center">
             <ListIcon as={SiReact} color={emphasis} fontSize="2em" />
-            React
+            React Native
           </ListItem>
           <ListItem fontSize="small" display="flex" alignItems="center">
             <ListIcon as={SiNextdotjs} color={emphasis} fontSize="2em" />

@@ -1,33 +1,14 @@
 import { IconType } from 'react-icons'
 import {
-  SiDotnet,
-  SiJavascript,
-  SiTypescript,
   SiNodedotjs,
-  SiGraphql,
-  SiApollographql,
-  SiPhp,
   SiReact,
   SiNextdotjs,
-  SiRedux,
   SiStyledcomponents,
-  SiGhost,
-  SiVuedotjs,
-  SiDocker,
-  SiGooglecloud,
-  SiCpanel,
-  SiRancher,
-  SiGitlab,
-  SiPostgresql,
-  SiMicrosoftsqlserver,
-  SiMysql,
   SiMongodb,
-  SiRedis,
   SiSocketdotio,
   SiMaterialui,
   SiFramer,
   SiGit,
-  SiGnubash,
   SiVisualstudiocode,
   SiUnity,
   SiMicrosoft,
@@ -43,6 +24,7 @@ import {
   SiJunit5,
   SiFirebase,
   SiSqlite,
+  SiSwift,
 } from 'react-icons/si'
 import { BsQuestionSquare } from 'react-icons/bs'
 import { AiOutlineAntDesign } from 'react-icons/ai'
@@ -67,7 +49,11 @@ export const Skills: {
 } = {
   mobile: [
     {
-      name: 'Android (Kotlin/Java)',
+      name: 'Android (Kotlin)',
+      icon: SiKotlin,
+    },
+    {
+      name: 'Android (Java)',
       icon: SiAndroid,
     },
     {
@@ -75,17 +61,21 @@ export const Skills: {
       icon: SiFlutter,
     },
     {
+      name: 'React Native',
+      icon: SiReact,
+    },
+    {
       name: 'Unit Test (Espresso)',
       icon: SiJunit5,
     },
     {
-      name: 'Jetpack Compose',
-      icon: SiAndroid,
+      name: 'Swift',
+      icon: SiSwift,
     },
     {
-      name: 'GetX Pattern',
-      icon: SiFlutter,
-    },
+      name: 'Jetpack Compose',
+      icon: SiAndroid,
+    }
   ],
   backend: [
     {

@@ -31,7 +31,7 @@ const FeaturedWorksSection = () => {
         Some of my works.
       </Heading>
       <Text variant="description">
-        Check out some of the works I made at personal projects and even case
+        Check out some of the works I made at personal projects, freelance and even case
         studies.
       </Text>
 
@@ -44,13 +44,13 @@ const FeaturedWorksSection = () => {
         <MotionGridItem colSpan={6} variants={fadeInUpSlower}>
           <FeaturedCard
             idx={1}
-            title="Tobira!"
-            src="/works/tobira/IphoneX-tobira.jpg"
-            description="Japanese social media platform for travelers to show off their
-          adventure to the world. I was incharge of Front end integration, made using React, Antd and Styled Components."
+            title="Crypto Wallet!"
+            src="/works/cryptowallet.png"
+            description="Cross Platform for crypto to show off their
+          information about your coin and market. I was incharge of cross platform, made using React Native, Axios and Redux."
             height={{ base: '130px', md: '225px', '2xl': '300px' }}
-            ctaUrl="https://tobira-app-test.netlify.app/"
-            objectPosition="right 20%"
+            ctaUrl="https://github.com/danieldev24/Crypto_Wallet_React_Native"
+            objectPosition="left 30%"
             isMobile={isMobile}
           />
         </MotionGridItem>
@@ -58,11 +58,11 @@ const FeaturedWorksSection = () => {
         <MotionGridItem colSpan={6} variants={fadeInUpSlower}>
           <FeaturedCard
             idx={2}
-            title="RSV"
-            description="RSV is a smart contract (ERC20) powered reservation system. I am incharge of backend using NET.Core 2.1."
-            src="/works/rsv.png"
+            title="Poro"
+            description="Poro is a smart tool to help you be productive at work based on Podomoro. I am incharge of Android using Kotlin"
+            src="/works/poro.png"
             height={{ base: '130px', md: '225px', '2xl': '300px' }}
-            ctaUrl="https://solution.rsv.ltd/jp"
+            ctaUrl="https://github.com/danieldev24/Poro"
             isMobile={isMobile}
           />
         </MotionGridItem>
@@ -70,12 +70,12 @@ const FeaturedWorksSection = () => {
         <MotionGridItem colSpan={6} variants={fadeInUpSlower}>
           <FeaturedCard
             idx={3}
-            title="Agora School"
-            description="A quizz - reviewer LMS, I made as a freelancer. Backend were powered by PHPSlim and VueJS for Front end."
-            src="/works/agora.png"
+            title="Currency"
+            description="A crypto currency, I made as research project. Android were powered by Jetpack Compose and Clean Architecture."
+            src="/works/currency.png"
             height={{ base: '130px', md: '225px', '2xl': '300px' }}
-            ctaUrl="https://dev.agora-school.com"
-            objectPosition="right 20%"
+            ctaUrl="https://github.com/danieldev24/CryptoCurrency"
+            objectPosition="center"
             isMobile={isMobile}
           />
         </MotionGridItem>
