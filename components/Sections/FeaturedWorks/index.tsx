@@ -83,11 +83,11 @@ const FeaturedWorksSection = () => {
         <MotionGridItem colSpan={6} variants={fadeInUpSlower}>
           <FeaturedCard
             idx={4}
-            title="TMH Layla EC"
-            description="A Japanese Semi-conductor e-commerce made at my old place at IVP. I was working with backend using ASP.NET MVC"
-            src="/works/tmh.png"
+            title="Tesla Connect"
+            description="A Concept Tesla'car manage. I was working with cross platform using Flutter"
+            src="/works/tesla.png"
             height={{ base: '130px', md: '225px', '2xl': '300px' }}
-            ctaUrl="https://www.layla-ec.com/"
+            ctaUrl="https://github.com/danieldev24/Tesla-Connect"
             isMobile={isMobile}
           />
         </MotionGridItem>
