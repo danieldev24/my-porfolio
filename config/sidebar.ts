@@ -37,7 +37,7 @@ export const SocialMedias: SocialMedia[] = [
   },
   {
     label: 'CV',
-    href: './LeTranHoangSonCV.pdf',
+    href: 'https://i.topcv.vn/letranhoangsonnbspnbsp?ref=3080563',
     icon: FaFileDownload,
   },
 ]
