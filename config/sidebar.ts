@@ -35,9 +35,4 @@ export const SocialMedias: SocialMedia[] = [
     href: 'https://dev.to/sondaniel',
     icon: FaDev,
   },
-  {
-    label: 'CV',
-    href: 'https://i.topcv.vn/letranhoangsonnbspnbsp?ref=3080563',
-    icon: FaFileDownload,
-  },
 ]

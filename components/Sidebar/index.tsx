@@ -123,24 +123,50 @@ const Sidebar = () => {
             <br />I am mobile developer that specializes at Android,Cross
             Platform,recently found myself studying Web and UX too.
           </MotionText>
-          <MotionButton
-            size="lg"
-            variant="outline"
-            borderWidth="1px"
-            borderRadius="0"
-            fontWeight="normal"
-            fontSize="sm"
-            width="120px"
-            variants={simpleOpacity}
-            as={'a'}
-            href="mailto:hoangson.daniel@gmail.com"
-            target="_blank"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+          <Container
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
           >
-            Get in touch!
-          </MotionButton>
+            <MotionButton
+              size="lg"
+              variant="outline"
+              borderWidth="1px"
+              borderRadius="0"
+              fontWeight="normal"
+              fontSize="sm"
+              width="120px"
+              variants={simpleOpacity}
+              as={'a'}
+              href="mailto:hoangson.daniel@gmail.com"
+              target="_blank"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              marginRight={'10'}
+            >
+              Get in touch!
+            </MotionButton>
 
+            <MotionButton
+              size="lg"
+              variant="outline"
+              borderWidth="1px"
+              borderRadius="0"
+              fontWeight="normal"
+              fontSize="sm"
+              width="120px"
+              variants={simpleOpacity}
+              as={'a'}
+              href="https://i.topcv.vn/letranhoangsonnbspnbsp?ref=3080563"
+              target="_blank"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Get my CV!
+            </MotionButton>
+          </Container>
           <MotionBox d="flex" variants={simpleOpacity}>
             {SocialMedias.map((socMedia) => (
               <Link
