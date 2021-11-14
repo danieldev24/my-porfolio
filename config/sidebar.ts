@@ -6,6 +6,8 @@ import {
   FaDev,
   FaDownload,
   FaFileDownload,
+  FaTelegram,
+  FaSkype,
 } from 'react-icons/fa'
 
 type SocialMedia = {
@@ -34,5 +36,15 @@ export const SocialMedias: SocialMedia[] = [
     label: 'Dev.to',
     href: 'https://dev.to/sondaniel',
     icon: FaDev,
+  },
+  {
+    label: "Telegram",
+    href: 'https://t.me/hoangson24',
+    icon: FaTelegram
+  },
+  {
+    label: 'Skype',
+    href:'https://join.skype.com/invite/e0CFqGdWwUII',
+    icon: FaSkype
   },
 ]

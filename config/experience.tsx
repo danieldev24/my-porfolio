@@ -59,7 +59,7 @@ export const Experiences: {
     subDetail: '',
     url: 'https://atmaneuler.com/',
     position: 'Mobile Developer',
-    duration: 'Jun 2020 - Apr 2021',
+    duration: 'May 2020 - Apr 2021',
     logo: {
       light: '/worked_at_logos/atman/atman.png',
       dark: '/worked_at_logos/atman/atman.jpg',
@@ -106,7 +106,7 @@ export const Experiences: {
     subDetail: 'formerly BSG ONE Inc.',
     url: 'https://www.thlone.vn/',
     position: 'R&D Developer',
-    duration: 'Mar 2019 - Jun 2020',
+    duration: 'Jan 2019 - May 2020',
     logo: {
       light: '/worked_at_logos/thl/thl.png',
       dark: '/worked_at_logos/thl/thl.jpg',
@@ -117,7 +117,7 @@ export const Experiences: {
       </>,
       <>
         Create an ecommerce system backend that provides comprehensive solutions for stores, delivery and users based on
-        RESTFul API,RabbitMQ and the reciprocal interaction of the two databases MariaDB and MongoDB. 
+        RESTFul API,RabbitMQ and the reciprocal interaction of the two databases MariaDB and MongoDB.
       </>,
       <>
         Hired at 2019, I'm a internship first. Shortly

@@ -10,9 +10,6 @@ import {
   SiFramer,
   SiGit,
   SiVisualstudiocode,
-  SiUnity,
-  SiMicrosoft,
-  SiElectron,
   SiKotlin,
   SiJava,
   SiMariadb,
@@ -20,16 +17,13 @@ import {
   SiXcode,
   SiFlutter,
   SiAndroid,
-  SiIos,
   SiJunit5,
   SiFirebase,
   SiSqlite,
   SiSwift,
+  SiChakraui,
 } from 'react-icons/si'
-import { BsQuestionSquare } from 'react-icons/bs'
-import { AiOutlineAntDesign } from 'react-icons/ai'
 import { FaSourcetree } from 'react-icons/fa'
-import { IoLogoPwa } from 'react-icons/io5'
 
 export type SkillCategory =
   | 'backend'
@@ -75,7 +69,7 @@ export const Skills: {
     {
       name: 'Jetpack Compose',
       icon: SiAndroid,
-    }
+    },
   ],
   backend: [
     {
@@ -134,17 +128,17 @@ export const Skills: {
     },
     {
       name: 'ChakraUI',
-      icon: BsQuestionSquare,
+      icon: SiChakraui,
     },
   ],
   'productivity boost': [
     {
-      name:'Android Studio',
-      icon: SiAndroidstudio
+      name: 'Android Studio',
+      icon: SiAndroidstudio,
     },
     {
-      name:'Xcode',
-      icon: SiXcode
+      name: 'Xcode',
+      icon: SiXcode,
     },
     {
       name: 'VSCode',

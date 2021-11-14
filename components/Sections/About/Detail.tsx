@@ -19,7 +19,6 @@ import {
   SiKotlin,
   SiJava,
   SiFlutter,
-  SiChakraui,
 } from 'react-icons/si'
 import { GiCoffeePot } from 'react-icons/gi'
 import { IoMdOpen } from 'react-icons/io'
@@ -50,7 +49,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
         and currently working as a <b>Mobile Developer</b> that focuses on{' '}
         <b>Android</b>,{' '}
         <Tooltip
-          label="Ha!. I focus on Flutter with GetX Pattern"
+          label="Ha!. I focus on Flutter with GetX Pattern and a littel bit React Native"
           aria-label="Cross PlatForm?"
           hasArrow
         >
@@ -101,10 +100,6 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           <ListItem fontSize="small" display="flex" alignItems="center">
             <ListIcon as={SiNextdotjs} color={emphasis} fontSize="2em" />
             NextJS
-          </ListItem>
-          <ListItem fontSize="small" display="flex" alignItems="center">
-            <ListIcon as={SiChakraui} color={emphasis} fontSize="2em" />
-            Chakra UI
           </ListItem>
         </List>
         <Box>
