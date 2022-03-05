@@ -93,7 +93,7 @@ const Sidebar = () => {
             Or you could call me
             <Text variant="emphasis" as="span">
               {' '}
-              Daniel
+              Benjamin
             </Text>
             .That works too...
           </MotionText>

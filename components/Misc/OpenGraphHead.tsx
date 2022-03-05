@@ -9,7 +9,7 @@ const OpenGraphHead = () => (
     <meta property="og:image" content="/card.png" />
     <meta
       property="og:description"
-      content="Howdy! I am Hoang Son. Or you could call me Daniel. I am a Mobile Developer"
+      content="Howdy! I am Hoang Son. Or you could call me Benjamin. I am a Mobile Developer"
     />
     <meta property="og:type" content="profile" />
     <meta property="og:image" content="/hs_avatar.png"></meta>
