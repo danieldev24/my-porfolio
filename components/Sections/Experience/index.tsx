@@ -20,11 +20,11 @@ const DetailSection = () => (
       to hone my skills and talents. These companies will always have a special
       place in my heart. Currently I am working with{' '}
       <Link
-        href="https://neoconsulting.com.vn/"
+        href="https://https://www.tyme.com/"
         target="_blank"
         rel="noreferrer"
       >
-        Neo Consulting
+        Tyme
       </Link>
       .
     </Text>

@@ -1,6 +1,6 @@
 import { Link } from '@chakra-ui/react'
 
-export type Company = 'NEO' | 'ATMAN' | 'THL'
+export type Company = 'TYME' | 'ATMAN' | 'THL'
 
 export type CompanyDetail = {
   name: string
@@ -19,38 +19,49 @@ export type CompanyDetail = {
 export const Experiences: {
   [key in Company]: CompanyDetail
 } = {
-  NEO: {
-    name: 'Neo Consulting',
-    longName: 'Neo Consulting',
+  TYME: {
+    name: 'Tyme',
+    longName: 'Tyme Viet Nam',
     subDetail: '',
-    url: 'https://neoconsulting.com.vn/',
-    position: 'Android Developer',
-    duration: 'Apr 2021 - Present',
+    url: 'https://tyme.com/',
+    position: 'Software Engineer',
+    duration: 'Dec 2021 - Present',
     logo: {
-      light: '/worked_at_logos/neo/logo.png',
-      dark: '/worked_at_logos/neo/neo.jpg',
+      light: '/worked_at_logos/tyme/tyme_logo_light.png',
+      dark: '/worked_at_logos/tyme/tyme_logo_dark.png',
     },
     roles: [
       <>
-        Revamping the legacy Partner Portal into a new{' '}
+        Revamping the legacy partner portal into a new{' '}
         <Link
-          aria-label="MSport"
-          href="https://www.msport.com/ng/web/welcome"
+          aria-label="TymeBank"
+          href="https://play.google.com/store/apps/details?id=consumer.cbsa.smartapp&hl=en&gl=US"
           target="_blank"
           rel="noreferrer"
         >
-          MSport
+          Tyme Bank
+        </Link>{' '}
+        and{' '}
+        <Link
+          aria-label="TymeKiosk"
+          href="https://www.tyme.com/tymekiosk/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Tyme Kiosk
         </Link>{' '}
         using Kotlin and Java. Restructuring the old express app into a
         newer architectural design approach.
       </>,
       <>
-        Created multiple Withdraw and Deposit extensions to improve payment process
-        better.
+        Created multiple payment feature and extensions to improve user experience.
       </>,
       <>
         Upgrading application structure, receiving and fulfilling customer requests. Application maintenance and troubleshooting.
       </>,
+      <>
+      Attend to develop feature in Back End using Java Spring.
+    </>,
     ],
   },
   ATMAN: {
@@ -59,7 +70,7 @@ export const Experiences: {
     subDetail: '',
     url: 'https://atmaneuler.com/',
     position: 'Mobile Developer',
-    duration: 'May 2020 - Apr 2021',
+    duration: 'May 2020 - Dec 2021',
     logo: {
       light: '/worked_at_logos/atman/atman.png',
       dark: '/worked_at_logos/atman/atman.jpg',
@@ -127,4 +138,4 @@ export const Experiences: {
   },
 }
 
-export const ExperiencesList = [Experiences.NEO, Experiences.ATMAN,Experiences.THL]
+export const ExperiencesList = [Experiences.TYME, Experiences.ATMAN,Experiences.THL]
