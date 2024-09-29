@@ -1,9 +1,4 @@
-import {
-  Box,
-  Image as ChkImage,
-  SkeletonCircle,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Box, Image as ChkImage, useColorModeValue } from '@chakra-ui/react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
 import { avatarAnimation } from 'config/animations'
@@ -48,9 +43,8 @@ const Avatar = () => {
         variants={avatarAnimation}
         exit={{ opacity: 0 }}
       >
-        <MotionBox
-        >
-        <MotionImage
+        <MotionBox>
+          <MotionImage
             objectFit="contain"
             rounded="lg"
             src={imgAvatar}
@@ -58,10 +52,8 @@ const Avatar = () => {
             loading="lazy"
           />
         </MotionBox>
-        
       </MotionBox>
     </AnimatePresence>
   )
 }
-
 export default Avatar

@@ -6,12 +6,10 @@ import {
   SiStyledcomponents,
   SiMongodb,
   SiSocketdotio,
-  SiMaterialui,
   SiFramer,
   SiGit,
   SiVisualstudiocode,
   SiKotlin,
-  SiJava,
   SiMariadb,
   SiAndroidstudio,
   SiXcode,
@@ -22,8 +20,9 @@ import {
   SiSqlite,
   SiSwift,
   SiChakraui,
+  SiUikit,
 } from 'react-icons/si'
-import { FaSourcetree } from 'react-icons/fa'
+import { FaSourcetree, FaJava } from 'react-icons/fa'
 
 export type SkillCategory =
   | 'backend'
@@ -74,7 +73,7 @@ export const Skills: {
   backend: [
     {
       name: 'Java Spring',
-      icon: SiJava,
+      icon: FaJava,
     },
     {
       name: 'NodeJS',
@@ -120,7 +119,7 @@ export const Skills: {
     },
     {
       name: 'MaterialUI',
-      icon: SiMaterialui,
+      icon: SiUikit,
     },
     {
       name: 'Framer Motion',
