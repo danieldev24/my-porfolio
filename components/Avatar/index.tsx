@@ -21,6 +21,7 @@ declare global {
 
 const Avatar = () => {
   const MotionBox = motion(Box)
+  const MotionImage = motion(ChkImage)
   const imgAvatar = useColorModeValue(
     AvatarImages.LightMode,
     AvatarImages.DarkMode
@@ -38,7 +39,7 @@ const Avatar = () => {
   return (
     <AnimatePresence>
       <MotionBox
-        id="klAvatar"
+        id="hsAvatar"
         boxSize={{ base: 64, lg: 'sm' }}
         padding={{ base: 8 }}
         marginBottom={{ base: 10, md: 0, lg: 0 }}
@@ -47,14 +48,17 @@ const Avatar = () => {
         variants={avatarAnimation}
         exit={{ opacity: 0 }}
       >
-        <ChkImage
-          src={imgAvatar}
-          alt="KL Lawingco Avatar"
-          htmlWidth="250"
-          htmlHeight="250"
-          margin="auto"
-          fallback={<SkeletonCircle height="100%" width="100%" />}
-        />
+        <MotionBox
+        >
+        <MotionImage
+            objectFit="contain"
+            rounded="lg"
+            src={imgAvatar}
+            alt="Hoang Son Avatar"
+            loading="lazy"
+          />
+        </MotionBox>
+        
       </MotionBox>
     </AnimatePresence>
   )

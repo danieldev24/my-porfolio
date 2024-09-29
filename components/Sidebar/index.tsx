@@ -93,7 +93,7 @@ const Sidebar = () => {
             Or you could call me
             <Text variant="emphasis" as="span">
               {' '}
-              Benjamin
+              Shawn
             </Text>
             .That works too...
           </MotionText>
@@ -140,7 +140,7 @@ const Sidebar = () => {
               width="120px"
               variants={simpleOpacity}
               as={'a'}
-              href="mailto:hoangson.daniel@gmail.com"
+              href="mailto:hoangson.shawn@gmail.com"
               target="_blank"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -159,7 +159,7 @@ const Sidebar = () => {
               width="120px"
               variants={simpleOpacity}
               as={'a'}
-              href="https://i.topcv.vn/letranhoangsonnbspnbsp?ref=3080563"
+              href="LeTranHoangSonCV.pdf"
               target="_blank"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}

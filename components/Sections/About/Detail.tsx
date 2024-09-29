@@ -17,9 +17,9 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiKotlin,
-  SiJava,
   SiFlutter,
 } from 'react-icons/si'
+import { FaJava } from 'react-icons/fa'
 import { GiCoffeePot } from 'react-icons/gi'
 import { IoMdOpen } from 'react-icons/io'
 
@@ -79,7 +79,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
             Kotlin
           </ListItem>
           <ListItem fontSize="small" display="flex" alignItems="center">
-            <ListIcon as={SiJava} color={emphasis} fontSize="2em" />
+            <ListIcon as={FaJava} color={emphasis} fontSize="2em" />
             Java
           </ListItem>
           <ListItem fontSize="small" display="flex" alignItems="center">

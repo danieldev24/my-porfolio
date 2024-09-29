@@ -103,7 +103,7 @@ const ScrollMore = () => {
               as="a"
               paddingY={3}
               fontFamily="monospace"
-              href="mailto:marcjhon18@gmail.com"
+              href="mailto:hoangson.daniel@gmail.com"
               target="_blank"
               rel="noreferrer"
               color={emailColor}

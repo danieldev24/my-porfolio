@@ -27,8 +27,8 @@ export const Experiences: {
     position: 'Software Engineer',
     duration: 'Dec 2021 - Present',
     logo: {
-      light: '/worked_at_logos/tyme/tyme_logo_light.png',
-      dark: '/worked_at_logos/tyme/tyme_logo_dark.png',
+      light: '/worked_at_logos/tyme/tymex_logo_light.png',
+      dark: '/worked_at_logos/tyme/tymex_logo_dark.png',
     },
     roles: [
       <>
@@ -60,8 +60,8 @@ export const Experiences: {
         Upgrading application structure, receiving and fulfilling customer requests. Application maintenance and troubleshooting.
       </>,
       <>
-      Attend to develop feature in Back End using Java Spring.
-    </>,
+        Using Jetpack compose to create the Design System.
+      </>,
     ],
   },
   ATMAN: {
@@ -78,28 +78,28 @@ export const Experiences: {
     roles: [
       <>
         Developed a application to provides import and export management solutions for {' '}
-      <Link
-        aria-label="Kstar"
-        href="https://www.kstar.com/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Kstar
-      </Link>{' '} using Flutter,apply GetX Pattern.
+        <Link
+          aria-label="Kstar"
+          href="https://www.kstar.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Kstar
+        </Link>{' '} using Flutter,apply GetX Pattern.
       </>,
       <>
-      Developed a application to manage import and export of cloth materials at the warehouse for {' '}
-      <Link
-        aria-label="PungKook"
-        href="http://www.pungkook.com/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        PungKook WMS
-      </Link>{' '} using Kotlin,apply MVVM
-    </>,
+        Developed an application to manage import and export of cloth materials at the warehouse for {' '}
+        <Link
+          aria-label="PungKook"
+          href="http://www.pungkook.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          PungKook WMS
+        </Link>{' '} using Kotlin, applied MVVM
+      </>,
       <>
-        Developed a application to manage import and export of leather shoe materials at the warehouse for {' '}
+        Developed an application to manage import and export of leather shoe materials at the warehouse for {' '}
         <Link
           aria-label="Hwaseung"
           href="http://hwaseunggroup.com/eng_php/index.php"
@@ -107,7 +107,7 @@ export const Experiences: {
           rel="noreferrer"
         >
           Hwaseung DPS
-        </Link>{' '} using Kotlin,apply MVVM
+        </Link>{' '} using Kotlin, applied MVVM
       </>,
     ],
   },
@@ -138,4 +138,4 @@ export const Experiences: {
   },
 }
 
-export const ExperiencesList = [Experiences.TYME, Experiences.ATMAN,Experiences.THL]
+export const ExperiencesList = [Experiences.TYME, Experiences.ATMAN, Experiences.THL]

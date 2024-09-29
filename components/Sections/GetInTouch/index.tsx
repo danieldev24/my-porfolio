@@ -56,7 +56,7 @@ const GetInTouch = () => {
         stuff, anything is cool. So feel free to message me on any of my social
         media or shoot me an{' '}
         <Link
-          href="mailto:marcjhon18@gmail.com"
+          href="mailto:hoangson.shawn@gmail.com"
           target="_blank"
           rel="noreferrer"
         >
@@ -75,7 +75,6 @@ const GetInTouch = () => {
           variant="description"
           textDecoration="none"
           rel="noreferrer"
-          href="https://github.com/klawingco/kl_portfolio"
           target="_blank"
           _focus={{ boxShadow: 'none' }}
         >
