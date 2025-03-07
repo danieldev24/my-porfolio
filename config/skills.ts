@@ -54,10 +54,6 @@ export const Skills: {
       icon: SiFlutter,
     },
     {
-      name: 'React Native',
-      icon: SiReact,
-    },
-    {
       name: 'Unit Test (Espresso)',
       icon: SiJunit5,
     },

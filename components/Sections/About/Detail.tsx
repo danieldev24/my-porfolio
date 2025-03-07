@@ -49,7 +49,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
         and currently working as a <b>Mobile Developer</b> that focuses on{' '}
         <b>Android</b>,{' '}
         <Tooltip
-          label="Ha!. I focus on Flutter with GetX Pattern and a littel bit React Native"
+          label="Ha!. I focus on Flutter with GetX Pattern"
           aria-label="Cross PlatForm?"
           hasArrow
         >
@@ -93,10 +93,6 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           </ListItem>
         </List>
         <List spacing={3}>
-          <ListItem fontSize="small" display="flex" alignItems="center">
-            <ListIcon as={SiReact} color={emphasis} fontSize="2em" />
-            React Native
-          </ListItem>
           <ListItem fontSize="small" display="flex" alignItems="center">
             <ListIcon as={SiNextdotjs} color={emphasis} fontSize="2em" />
             NextJS
