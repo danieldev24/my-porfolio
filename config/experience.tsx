@@ -20,7 +20,7 @@ export const Experiences: {
   [key in Company]: CompanyDetail
 } = {
   TYME: {
-    name: 'Tyme',
+    name: 'TymeX',
     longName: 'Tyme Viet Nam',
     subDetail: '',
     url: 'https://tyme.com/',
@@ -32,35 +32,46 @@ export const Experiences: {
     },
     roles: [
       <>
-        Revamping the legacy partner portal into a new{' '}
+        Worked on revamping a legacy partner portal into the new{' '}
         <Link
-          aria-label="TymeBank"
-          href="https://play.google.com/store/apps/details?id=consumer.cbsa.smartapp&hl=en&gl=US"
+          aria-label="GoTyme Bank"
+          href="https://play.google.com/store/search?q=gotyme+bank&c=apps&hl=en&gl=US"
           target="_blank"
           rel="noreferrer"
         >
-          Tyme Bank
+          GoTyme Bank
         </Link>{' '}
         and{' '}
         <Link
           aria-label="TymeKiosk"
-          href="https://www.tyme.com/tymekiosk/"
+          href="https://www.red-dot.org/ko/project/gotyme-bank-kiosk-66715"
           target="_blank"
           rel="noreferrer"
         >
           Tyme Kiosk
         </Link>{' '}
-        using Kotlin and Java. Restructuring the old express app into a
-        newer architectural design approach.
+        experience, refactoring legacy structures toward a cleaner architecture.
       </>,
       <>
-        Created multiple payment feature and extensions to improve user experience.
+        Owned the Origination & Customer domain (new customer registration/onboarding) and delivered customer-facing improvements for a large-scale banking app.
       </>,
       <>
-        Upgrading application structure, receiving and fulfilling customer requests. Application maintenance and troubleshooting.
+        Currently own the Android Design System built with Jetpack Compose, used across feature teams and markets to improve UI consistency and development speed.
       </>,
       <>
-        Using Jetpack compose to create the Design System.
+        Set up snapshot testing for Compose components to prevent visual regressions and improve release confidence.
+      </>,
+      <>
+        Created Design System guidelines and documentation; built a playground app for component demos,usage examples, and faster product/design alignment.
+      </>,
+      <>
+        Built and enhanced payment features and extensions to improve user experience.
+      </>,
+      <>
+        Maintained application stability and quality through troubleshooting, production support, and continuousimprovements; introduced workflow automation using N8N.
+      </>,
+      <>
+        Product metrics: 20M+ users | ~98% crash-free (Firebase) | 4.4+ rating
       </>,
     ],
   },

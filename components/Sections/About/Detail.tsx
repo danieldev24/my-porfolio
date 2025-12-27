@@ -19,7 +19,7 @@ import {
   SiKotlin,
   SiFlutter,
 } from 'react-icons/si'
-import { FaJava } from 'react-icons/fa'
+import { FaSwift } from 'react-icons/fa'
 import { GiCoffeePot } from 'react-icons/gi'
 import { IoMdOpen } from 'react-icons/io'
 
@@ -57,7 +57,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
             <b>Cross Platform</b>
           </Text>
         </Tooltip>{' '}
-        and even <b>a little bit Backend</b> stuff now, how time flies!
+        and even <b>a little bit IOS</b> stuff now, how time flies!
         <br /> <br />
         Here are few technologies that are cup of my{' '}
         <Tooltip
@@ -79,8 +79,8 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
             Kotlin
           </ListItem>
           <ListItem fontSize="small" display="flex" alignItems="center">
-            <ListIcon as={FaJava} color={emphasis} fontSize="2em" />
-            Java
+            <ListIcon as={FaSwift} color={emphasis} fontSize="2em" />
+            Swift
           </ListItem>
           <ListItem fontSize="small" display="flex" alignItems="center">
             <ListIcon as={SiFlutter} color={emphasis} fontSize="2em" />
