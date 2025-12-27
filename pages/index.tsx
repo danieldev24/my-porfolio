@@ -142,7 +142,7 @@ const Portfolio = ({ articles }: { articles: Article[] }): JSX.Element => {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://dev.to/api/articles?username=benbenjamin')
+  const res = await fetch('https://dev.to/api/articles?username=hoangshawn')
   const articles = await res.json()
   return {
     props: {
