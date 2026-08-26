@@ -615,6 +615,102 @@
   text-transform: uppercase;
 }
 
+.writingLead {
+  display: flex;
+  padding: 1.5rem 0;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.writingLead p {
+  margin: 0;
+}
+
+.writingLead p:first-child {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.writingLead p:last-child {
+  max-width: 21rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.writingList {
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.writingList li {
+  border-bottom: 1px solid var(--line);
+}
+
+.writingList a {
+  display: grid;
+  min-height: 6.5rem;
+  padding: 1rem 0.5rem;
+  grid-template-columns: 3rem 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  transition: background 150ms ease;
+}
+
+.writingList a:hover,
+.writingList a:focus-visible {
+  background: var(--panel);
+}
+
+.writingNumber,
+.writingList time,
+.writingList small {
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.625rem;
+}
+
+.writingList strong {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.writingList small {
+  display: -webkit-box;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.writingEmpty {
+  padding: 2rem;
+  border: 1px dashed var(--line-strong);
+  text-align: center;
+}
+
+.writingEmpty span,
+.writingEmpty a {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+}
+
+.writingEmpty p {
+  margin: 0.75rem auto 1rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.writingEmpty a {
+  color: var(--accent);
+}
+
 .page :focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
@@ -789,5 +885,18 @@
 
   .projectBody {
     min-height: 10rem;
+  }
+
+  .writingLead {
+    display: grid;
+  }
+
+  .writingList a {
+    min-height: 7rem;
+    grid-template-columns: 2.5rem 1fr;
+  }
+
+  .writingList time {
+    grid-column: 2;
   }
 }

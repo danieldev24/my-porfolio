@@ -4,9 +4,15 @@ import MobileHeader from './MobileHeader'
 import NavigationRail from './NavigationRail'
 import ProfileIntro from './ProfileIntro'
 import ProjectGrid from './ProjectGrid'
+import WritingIndex from './WritingIndex'
 import styles from './portfolio.module.css'
+import { Article } from 'types/article'
 
-const PortfolioShell = (): JSX.Element => {
+type PortfolioShellProps = {
+  articles: Article[]
+}
+
+const PortfolioShell = ({ articles }: PortfolioShellProps): JSX.Element => {
   const { colorMode } = useColorMode()
 
   return (
@@ -23,6 +29,7 @@ const PortfolioShell = (): JSX.Element => {
           <ProfileIntro />
           <ExperienceIndex />
           <ProjectGrid />
+          <WritingIndex articles={articles} />
         </main>
       </div>
     </div>
