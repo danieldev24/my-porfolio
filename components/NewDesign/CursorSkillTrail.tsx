@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import {
   MAX_TAGS,
+  MIN_TRAVEL_DISTANCE,
   randomBetween,
   scrambleWord,
   SPAWN_INTERVAL,
@@ -11,15 +12,10 @@ import { portfolio } from 'config/portfolio'
 type TrailTag = {
   bornAt: number
   decodeDuration: number
-  driftX: number
   element: HTMLSpanElement
   fadeDuration: number
-  fallDistance: number
   lastScrambleAt: number
-  rotation: number
   word: string
-  x: number
-  y: number
 }
 
 const CursorSkillTrail = (): JSX.Element => {
@@ -82,24 +78,14 @@ const CursorSkillTrail = (): JSX.Element => {
           tag.lastScrambleAt = time
         }
 
-        const driftProgress = Math.max(
+        const fadeProgress = Math.max(
           (elapsed - tag.decodeDuration) / tag.fadeDuration,
           0
         )
-        const x = tag.x + tag.driftX * driftProgress
-        const y =
-          tag.y +
-          tag.fallDistance * driftProgress * driftProgress +
-          8 * driftProgress
         const opacity =
-          elapsed < tag.decodeDuration ? 0.98 : 0.98 * (1 - driftProgress)
+          elapsed < tag.decodeDuration ? 0.98 : 0.98 * (1 - fadeProgress)
 
         tag.element.style.opacity = opacity.toFixed(3)
-        tag.element.style.transform = `translate3d(${x.toFixed(
-          2
-        )}px, ${y.toFixed(2)}px, 0) translate(-50%, -50%) rotate(${(
-          tag.rotation * driftProgress
-        ).toFixed(2)}deg)`
       }
 
       animationFrame = tags.length ? window.requestAnimationFrame(animate) : 0
@@ -117,7 +103,7 @@ const CursorSkillTrail = (): JSX.Element => {
       const word = portfolio.identity.skills[wordIndex].toUpperCase()
       const element = document.createElement('span')
       const paletteClass = palette[Math.floor(Math.random() * palette.length)]
-      const decodeDuration = randomBetween(320, 580)
+      const decodeDuration = randomBetween(220, 360)
 
       element.className = `${styles.cursorSkill} ${paletteClass}`
       element.textContent = scrambleWord(word, 0)
@@ -131,15 +117,10 @@ const CursorSkillTrail = (): JSX.Element => {
       tags.push({
         bornAt: time,
         decodeDuration,
-        driftX: randomBetween(-34, 34),
         element,
-        fadeDuration: randomBetween(1600, 2700),
-        fallDistance: randomBetween(48, 96),
+        fadeDuration: randomBetween(650, 950),
         lastScrambleAt: time,
-        rotation: randomBetween(-5, 5),
         word,
-        x: event.clientX,
-        y: event.clientY,
       })
 
       if (tags.length > MAX_TAGS) {
@@ -161,7 +142,8 @@ const CursorSkillTrail = (): JSX.Element => {
 
       if (
         isFirstMove ||
-        (time - lastSpawnAt >= SPAWN_INTERVAL && travelled >= 8)
+        (time - lastSpawnAt >= SPAWN_INTERVAL &&
+          travelled >= MIN_TRAVEL_DISTANCE)
       ) {
         spawnTag(event, time)
         lastSpawnAt = time

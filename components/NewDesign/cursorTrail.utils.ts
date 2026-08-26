@@ -1,6 +1,7 @@
 const SCRAMBLE_CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#*@?'
 
-export const SPAWN_INTERVAL = 72
+export const SPAWN_INTERVAL = 120
+export const MIN_TRAVEL_DISTANCE = 24
 export const MAX_TAGS = 28
 
 export const randomBetween = (minimum: number, maximum: number): number =>
