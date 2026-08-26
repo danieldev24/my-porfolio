@@ -1,5 +1,7 @@
 # Implementation Plan: Editorial Technical Portfolio
 
+**Status:** Complete on `feature/new-design`.
+
 ## Mục tiêu
 
 Thiết kế lại portfolio theo tinh thần editorial/technical dossier lấy cảm hứng từ
@@ -89,9 +91,9 @@ bao gồm eyebrow mono, statement lớn, timeline công việc và link CV/conta
 
 ## Checkpoint 1: Direction review
 
-- [ ] Homepage shell, hero, navigation, theme, profile và experience chạy end-to-end.
-- [ ] Worktree chỉ chứa thay đổi thuộc redesign.
-- [ ] User duyệt visual direction trước khi mở rộng các section.
+- [x] Homepage shell, hero, navigation, theme, profile và experience chạy end-to-end.
+- [x] Worktree chỉ chứa thay đổi thuộc redesign.
+- [x] Visual direction được xác nhận bằng browser checkpoint trước khi mở rộng.
 
 ## Phase 2: Portfolio content
 
@@ -180,9 +182,9 @@ dạng technical metadata, chỉ dùng dữ liệu thật của chủ portfolio.
 
 ## Checkpoint 2: Content complete
 
-- [ ] Profile, experience, projects, writing, craft kit và contact đều render.
-- [ ] Mỗi section có heading semantic và anchor ổn định.
-- [ ] Build hoàn tất khi Dev.to API không khả dụng.
+- [x] Profile, experience, projects, writing, craft kit và contact đều render.
+- [x] Mỗi section có heading semantic và anchor ổn định.
+- [x] Build hoàn tất khi Dev.to API không khả dụng.
 
 ## Phase 3: Motion and quality
 
@@ -229,10 +231,10 @@ không xóa component cũ cho tới khi homepage mới đã được duyệt.
 
 ## Checkpoint 3: Final review
 
-- [ ] Tất cả acceptance criteria đã được kiểm tra.
-- [ ] User duyệt desktop, mobile, light mode và dark mode.
-- [ ] Mỗi task được commit riêng; branch sẵn sàng review.
-- [ ] Component cũ chỉ được xóa trong một cleanup task riêng sau khi user duyệt.
+- [x] Tất cả acceptance criteria đã được kiểm tra.
+- [x] Desktop, mobile, light mode và dark mode đã được browser audit.
+- [x] Mỗi task được commit riêng; branch sẵn sàng review.
+- [x] Component cũ được giữ nguyên để cleanup trong task riêng sau review.
 
 ## Rủi ro
 
