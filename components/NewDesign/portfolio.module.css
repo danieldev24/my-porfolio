@@ -3,11 +3,12 @@
   --panel: #f7f6f1;
   --ink: #171816;
   --muted: #65665f;
-  --faint: #8f9188;
+  --faint: #686a63;
   --line: rgba(23, 24, 22, 0.14);
   --line-strong: rgba(23, 24, 22, 0.34);
   --accent: #1458e8;
   --signal: #c8f53a;
+  --signal-ink: #171816;
   --frame-bg: rgba(241, 240, 234, 0.9);
   --surface: rgba(247, 246, 241, 0.72);
   --header-bg: rgba(241, 240, 234, 0.94);
@@ -122,7 +123,7 @@
   width: 2.75rem;
   height: 2.75rem;
   place-items: center;
-  color: white;
+  color: var(--paper);
   background: var(--accent);
   font-family: var(--mono);
   font-size: 0.75rem;
@@ -411,7 +412,7 @@
 }
 
 .heroActions a:first-child {
-  color: white;
+  color: var(--paper);
   border-color: var(--accent);
   background: var(--accent);
 }
@@ -878,7 +879,7 @@
   width: 7rem;
   height: 7rem;
   border: 1px solid var(--accent);
-  background: color-mix(in srgb, var(--panel) 80%, transparent);
+  background: var(--surface);
 }
 
 .craftDiagram i:nth-child(2) {
@@ -960,13 +961,13 @@
   min-height: 2.75rem;
   padding: 0.75rem 1rem;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid currentColor;
   font-family: var(--mono);
   font-size: 0.6875rem;
 }
 
 .contactActions a:first-child {
-  color: var(--ink);
+  color: var(--signal-ink);
   border-color: var(--signal);
   background: var(--signal);
 }
@@ -1091,6 +1092,10 @@
     font-family: var(--mono);
     font-size: 0.625rem;
     text-transform: uppercase;
+  }
+
+  .mobileTheme .themeControl button {
+    min-height: 2.75rem;
   }
 
   .main {

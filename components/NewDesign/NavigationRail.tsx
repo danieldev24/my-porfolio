@@ -43,9 +43,14 @@ const NavigationRail = (): JSX.Element => (
       <ThemeControl />
       <div className={styles.socialLinks} aria-label="Social links">
         {portfolio.social.map((item) => (
-          <a key={item.label} href={item.url} target="_blank" rel="noreferrer">
-            {item.shortLabel}
-            <span className={styles.visuallyHidden}>{item.label}</span>
+          <a
+            key={item.label}
+            href={item.url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={item.label}
+          >
+            <span aria-hidden="true">{item.shortLabel}</span>
           </a>
         ))}
       </div>
