@@ -26,8 +26,8 @@ export const mobileBreakpointsMap = {
 
 // Theme Config
 const config = {
-  initialColorMode: ThemeMode.Dark,
-  useSystemColorMode: false,
+  initialColorMode: ThemeMode.Light,
+  useSystemColorMode: true,
 }
 
 const colors = {
@@ -62,7 +62,9 @@ const textVariants = {
 const theme = extendTheme({
   config,
   fonts: {
-    body: 'Poppins',
+    body: '"Space Grotesk", system-ui, sans-serif',
+    heading: '"Space Grotesk", system-ui, sans-serif',
+    mono: '"IBM Plex Mono", monospace',
   },
   colors,
   styles,
