@@ -1,6 +1,7 @@
 export type ExperienceItem = {
   company: string
   period: string
+  responsibilities: string[]
   role: string
   summary: string
   url: string
@@ -33,9 +34,7 @@ export const portfolio = {
     introduction:
       'A mobile engineer shaping reliable product experiences from the component API to the final interaction. I care about the details teams reuse and the moments customers remember.',
     about: [
-      'I have been building mobile products since 2019, working across Android, iOS, Flutter, React Native, and backend services. That range taught me to look beyond a single screen and understand how product decisions, platform constraints, and engineering systems shape the complete experience.',
-      'Today, my focus is Android and Jetpack Compose at TymeX. I help turn design language into reusable components, practical guidance, and quality loops that let teams ship consistently across products and markets.',
-      'I enjoy the space between design and engineering: simplifying a component API, refining an interaction, or building tooling that removes repeated work. The goal is always the same—make complex systems easier for both the people building them and the people using them.',
+      'Since 2019, I have built mobile products across Android, iOS, Flutter, and React Native. Today I focus on Android and Jetpack Compose at TymeX, connecting design and engineering through reusable components, clear guidance, and reliable quality workflows.',
     ],
     profileFacts: [
       { label: 'Based in', value: 'Ho Chi Minh City' },
@@ -81,7 +80,14 @@ export const portfolio = {
       period: '2021—NOW',
       role: 'Software Engineer · Android Design Systems',
       summary:
-        'Building GoTyme Bank experiences and leading a Compose design system used across teams and markets. Introduced component guidance, a playground app, and snapshot testing for safer releases.',
+        'Building banking experiences and the shared Android foundations behind them.',
+      responsibilities: [
+        'Modernized legacy partner-portal flows for GoTyme Bank and Tyme Kiosk, moving core structures toward cleaner architecture.',
+        'Own the Origination & Customer domain, including registration and onboarding improvements for a large-scale banking product.',
+        'Lead the Jetpack Compose design system used by feature teams across products and markets.',
+        'Established component guidelines, a playground app, and snapshot testing to improve alignment and prevent visual regressions.',
+        'Deliver payment enhancements, production support, stability improvements, and workflow automation with n8n.',
+      ],
       url: 'https://tyme.com/',
     },
     {
@@ -89,7 +95,12 @@ export const portfolio = {
       period: '2020—2021',
       role: 'Mobile Developer',
       summary:
-        'Delivered Kotlin and Flutter warehouse products for manufacturing clients, turning complex inventory workflows into focused mobile tools.',
+        'Delivered warehouse applications for manufacturing teams with complex material flows.',
+      responsibilities: [
+        'Built a Flutter import and export management application for Kstar using the GetX pattern.',
+        'Developed PungKook WMS in Kotlin with MVVM to manage warehouse flows for cloth materials.',
+        'Developed Hwaseung DPS in Kotlin with MVVM to track leather-shoe materials through import and export operations.',
+      ],
       url: 'https://atmaneuler.com/',
     },
     {
@@ -97,7 +108,12 @@ export const portfolio = {
       period: '2019—2020',
       role: 'R&D Developer',
       summary:
-        'Worked across iOS, macOS, Android, and backend services—from remote desktop software to commerce systems and beacon-based mobile prototypes.',
+        'Researched and shipped products across mobile, desktop, and backend platforms.',
+      responsibilities: [
+        'Built iOS and macOS remote-viewer applications using the RDP protocol.',
+        'Developed an e-commerce backend for stores, delivery, and customers using REST APIs, RabbitMQ, MariaDB, and MongoDB.',
+        'Created an Android application in Java and MVVM to scan nearby beacons and display device information.',
+      ],
       url: 'https://www.thlone.vn/',
     },
   ] as ExperienceItem[],

@@ -35,7 +35,12 @@ const ExperienceIndex = (): JSX.Element => (
               <time>{item.period}</time>
             </div>
             <p className={styles.experienceRole}>{item.role}</p>
-            <p>{item.summary}</p>
+            <p className={styles.experienceSummary}>{item.summary}</p>
+            <ul className={styles.responsibilityList}>
+              {item.responsibilities.map((responsibility) => (
+                <li key={responsibility}>{responsibility}</li>
+              ))}
+            </ul>
           </article>
         </li>
       ))}

@@ -635,12 +635,42 @@
   text-transform: uppercase;
 }
 
-.experienceList article > p:last-child {
+.experienceSummary {
   max-width: 32rem;
   margin: 1rem 0 0;
+  color: var(--ink);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.responsibilityList {
+  display: grid;
+  max-width: 33rem;
+  padding: 0;
+  margin: 1rem 0 0;
+  gap: 0.625rem;
+  list-style: none;
+}
+
+.responsibilityList li {
+  position: relative;
+  padding: 0 0 0 1rem;
+  border: 0;
   color: var(--muted);
-  font-size: 0.875rem;
-  line-height: 1.65;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.responsibilityList li::before {
+  position: absolute;
+  top: 0.65em;
+  left: 0;
+  width: 0.375rem;
+  height: 1px;
+  content: '';
+  border: 0;
+  background: var(--accent);
 }
 
 .projectIntro {
