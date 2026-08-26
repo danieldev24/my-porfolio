@@ -1,5 +1,6 @@
 import ThemeControl from './ThemeControl'
 import styles from './portfolio.module.css'
+import { portfolio } from 'config/portfolio'
 
 export const navigationItems = [
   { href: '#top', index: '00', label: 'Profile' },
@@ -41,23 +42,12 @@ const NavigationRail = (): JSX.Element => (
       <p className={styles.microLabel}>03_THEME</p>
       <ThemeControl />
       <div className={styles.socialLinks} aria-label="Social links">
-        <a
-          href="https://github.com/danieldev24"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GH
-        </a>
-        <a
-          href="https://www.linkedin.com/in/hoangsonshawn/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          LI
-        </a>
-        <a href="https://dev.to/sondaniel" target="_blank" rel="noreferrer">
-          DEV
-        </a>
+        {portfolio.social.map((item) => (
+          <a key={item.label} href={item.url} target="_blank" rel="noreferrer">
+            {item.shortLabel}
+            <span className={styles.visuallyHidden}>{item.label}</span>
+          </a>
+        ))}
       </div>
     </div>
 
