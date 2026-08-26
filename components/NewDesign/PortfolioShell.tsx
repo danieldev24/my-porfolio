@@ -3,6 +3,7 @@ import ExperienceIndex from './ExperienceIndex'
 import MobileHeader from './MobileHeader'
 import NavigationRail from './NavigationRail'
 import ProfileIntro from './ProfileIntro'
+import ProjectGrid from './ProjectGrid'
 import styles from './portfolio.module.css'
 
 const PortfolioShell = (): JSX.Element => {
@@ -21,6 +22,7 @@ const PortfolioShell = (): JSX.Element => {
         <main id="main-content" className={styles.main}>
           <ProfileIntro />
           <ExperienceIndex />
+          <ProjectGrid />
         </main>
       </div>
     </div>
