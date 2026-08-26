@@ -32,6 +32,17 @@ export const portfolio = {
     statement: 'I make complex mobile systems feel clear.',
     introduction:
       'A mobile engineer shaping reliable product experiences from the component API to the final interaction. I care about the details teams reuse and the moments customers remember.',
+    about: [
+      'I have been building mobile products since 2019, working across Android, iOS, Flutter, React Native, and backend services. That range taught me to look beyond a single screen and understand how product decisions, platform constraints, and engineering systems shape the complete experience.',
+      'Today, my focus is Android and Jetpack Compose at TymeX. I help turn design language into reusable components, practical guidance, and quality loops that let teams ship consistently across products and markets.',
+      'I enjoy the space between design and engineering: simplifying a component API, refining an interaction, or building tooling that removes repeated work. The goal is always the same—make complex systems easier for both the people building them and the people using them.',
+    ],
+    profileFacts: [
+      { label: 'Based in', value: 'Ho Chi Minh City' },
+      { label: 'Building since', value: '2019' },
+      { label: 'Current focus', value: 'Compose design systems' },
+      { label: 'Working across', value: 'Product · Design · Engineering' },
+    ],
   },
   social: [
     {

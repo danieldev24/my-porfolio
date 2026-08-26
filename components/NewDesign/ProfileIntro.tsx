@@ -19,7 +19,20 @@ const ProfileIntro = (): JSX.Element => {
         <p className={styles.roleLine}>
           Android · Compose · Design Systems · {identity.location}
         </p>
-        <p className={styles.intro}>{identity.introduction}</p>
+        <div className={styles.aboutCopy}>
+          <p className={styles.intro}>{identity.introduction}</p>
+          {identity.about.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+        <dl className={styles.profileFacts} aria-label="Profile details">
+          {identity.profileFacts.map((fact) => (
+            <div key={fact.label}>
+              <dt>{fact.label}</dt>
+              <dd>{fact.value}</dd>
+            </div>
+          ))}
+        </dl>
         <div className={styles.heroActions}>
           <a href={`mailto:${identity.email}`}>Start a conversation ↗</a>
           <a href={identity.cv} target="_blank" rel="noreferrer">

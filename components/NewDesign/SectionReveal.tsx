@@ -13,9 +13,9 @@ const SectionReveal = ({ children }: SectionRevealProps): JSX.Element => {
   return (
     <motion.div
       ref={ref}
-      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 10 }}
       animate={inView ? { opacity: 1, y: 0 } : undefined}
-      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>

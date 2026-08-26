@@ -15,7 +15,7 @@ const HeroWordCycle = (): JSX.Element => {
 
     const interval = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % words.length)
-    }, 2400)
+    }, 4000)
     return () => window.clearInterval(interval)
   }, [reduceMotion])
 
@@ -27,10 +27,10 @@ const HeroWordCycle = (): JSX.Element => {
           <motion.em
             key={words[activeIndex]}
             className={styles.cyclingWord}
-            initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+            initial={reduceMotion ? false : { opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={reduceMotion ? undefined : { opacity: 0, y: -10 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            exit={reduceMotion ? undefined : { opacity: 0, y: -4 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
             {words[activeIndex]}.
           </motion.em>

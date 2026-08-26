@@ -294,7 +294,7 @@
   height: 18rem;
   border: 1px dashed var(--accent);
   border-radius: 50%;
-  animation: orbit 18s linear infinite;
+  animation: orbit 48s linear infinite;
 }
 
 .orbitRing::before {
@@ -307,31 +307,37 @@
   background: var(--accent);
 }
 
-.deviceFrame {
+.avatarFrame {
   position: relative;
   z-index: 2;
-  display: grid;
-  width: 8.5rem;
-  height: 14rem;
-  padding: 0.75rem;
-  grid-template-rows: auto 1fr auto;
-  border: 2px solid var(--ink);
+  width: 14rem;
+  aspect-ratio: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
   background: var(--panel);
-  box-shadow: 0.75rem 0.75rem 0 var(--accent);
+  box-shadow: 0.625rem 0.625rem 0 var(--accent);
+}
+
+.avatarImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  filter: grayscale(1) contrast(1.06);
+  object-fit: cover;
+}
+
+.avatarStamp {
+  position: absolute;
+  right: -1.25rem;
+  bottom: 1.25rem;
+  padding: 0.375rem 0.5rem;
+  color: var(--paper);
+  background: var(--ink);
   font-family: var(--mono);
-  font-size: 0.625rem;
-}
-
-.deviceFrame strong {
-  align-self: center;
-  font-size: 3rem;
-  font-weight: 500;
-  letter-spacing: -0.12em;
-}
-
-.deviceFrame span:last-child {
-  align-self: end;
-  justify-self: end;
+  font-size: 0.5625rem;
+  letter-spacing: 0.08em;
 }
 
 .visualCoordinate {
@@ -389,11 +395,57 @@
   text-transform: uppercase;
 }
 
-.intro {
+.aboutCopy {
   max-width: 34rem;
   margin: 2rem 0 0;
+}
+
+.aboutCopy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.aboutCopy .intro {
+  color: var(--ink);
   font-size: 1.0625rem;
   line-height: 1.65;
+}
+
+.aboutCopy p + p {
+  margin-top: 1rem;
+}
+
+.profileFacts {
+  display: grid;
+  padding: 0;
+  margin: 2rem 0 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.profileFacts div {
+  min-height: 5rem;
+  padding: 0.75rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.profileFacts dt {
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profileFacts dd {
+  margin: 0.625rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .heroActions {
@@ -574,11 +626,18 @@
     border-color 150ms ease;
 }
 
-.projectCard:hover,
 .projectCard:focus-within {
   z-index: 2;
   border-color: var(--accent);
-  transform: translateY(-0.25rem);
+  transform: translateY(-0.125rem);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projectCard:hover {
+    z-index: 2;
+    border-color: var(--accent);
+    transform: translateY(-0.125rem);
+  }
 }
 
 .projectCard > a {
@@ -1131,17 +1190,20 @@
     height: 14rem;
   }
 
-  .deviceFrame {
-    width: 7rem;
-    height: 11rem;
+  .avatarFrame {
+    width: 11rem;
   }
 
   .heroCopy {
     padding-top: 1.5rem;
   }
 
-  .intro {
+  .aboutCopy .intro {
     font-size: 1rem;
+  }
+
+  .profileFacts {
+    grid-template-columns: 1fr;
   }
 
   .heroActions {
