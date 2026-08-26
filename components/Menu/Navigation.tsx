@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react'
+import { memo, useCallback, type MouseEvent } from 'react'
 import {
   Container,
   Button,
@@ -38,7 +38,7 @@ const Navigation = () => {
   const btnClassName = `${styles.blogBtn} ${!IsDark && styles.dark}`
   const Icon = IsDark ? SunIcon : MoonIcon
   const onMenuItemClick = useCallback(
-    (e) => {
+    (e: MouseEvent<HTMLElement>) => {
       e.stopPropagation()
       if (isMobile) {
         toggleOpen()

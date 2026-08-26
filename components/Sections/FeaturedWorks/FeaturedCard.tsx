@@ -18,7 +18,6 @@ import { easing, DURATIONS } from 'config/animations'
 
 export type FeaturedCardProps = {
   // Still can't find what's correct value for responsive value
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   height: string | ResponsiveValue<any>
   src: string
   idx: number

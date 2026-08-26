@@ -35,7 +35,6 @@ const colors = {
 }
 
 const styles = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   global: (props: any) => ({
     body: {
       color: mode('gray.800', 'whiteAlpha.900')(props),

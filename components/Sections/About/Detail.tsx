@@ -13,7 +13,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import {
-  SiReact,
   SiNextdotjs,
   SiNodedotjs,
   SiKotlin,

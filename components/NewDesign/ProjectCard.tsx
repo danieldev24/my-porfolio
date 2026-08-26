@@ -14,10 +14,8 @@ const ProjectCard = ({ index, project }: ProjectCardProps): JSX.Element => (
         <Image
           src={project.image}
           alt={`${project.name} project preview`}
-          width={800}
-          height={500}
-          layout="responsive"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           priority={index === 1}
           sizes="(max-width: 639px) 100vw, 287px"
         />

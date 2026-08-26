@@ -4,8 +4,6 @@ import {
   FaLinkedin,
   FaGithub,
   FaDev,
-  FaDownload,
-  FaFileDownload,
   FaTelegram,
   FaSkype,
 } from 'react-icons/fa'
