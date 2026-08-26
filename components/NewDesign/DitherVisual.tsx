@@ -1,12 +1,10 @@
 import Image from 'next/image'
-import SkillField from './SkillField'
 import styles from './portfolio.module.css'
 
 const DitherVisual = (): JSX.Element => (
   <div className={styles.heroVisual}>
     <div className={styles.signalDisc} aria-hidden="true" />
     <div className={styles.orbitRing} aria-hidden="true" />
-    <SkillField />
     <div className={styles.avatarFrame}>
       <Image
         className={styles.avatarImage}
