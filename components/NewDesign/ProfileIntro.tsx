@@ -1,3 +1,5 @@
+import DitherVisual from './DitherVisual'
+import HeroWordCycle from './HeroWordCycle'
 import styles from './portfolio.module.css'
 import { portfolio } from 'config/portfolio'
 
@@ -6,20 +8,13 @@ const ProfileIntro = (): JSX.Element => {
 
   return (
     <section id="top" className={styles.hero} aria-labelledby="hero-title">
-      <div className={styles.heroVisual} aria-hidden="true">
-        <div className={styles.signalDisc} />
-        <div className={styles.deviceFrame}>
-          <span>BUILD</span>
-          <strong>24</strong>
-          <span>STABLE</span>
-        </div>
-      </div>
+      <DitherVisual />
 
       <div className={styles.heroCopy}>
         <p className={styles.eyebrow}>00 · PROFILE / MOBILE SYSTEMS</p>
         <h1 id="hero-title">{identity.name}</h1>
         <p className={styles.statement}>
-          I make complex mobile systems feel <em>clear.</em>
+          I make complex mobile systems feel <HeroWordCycle />
         </p>
         <p className={styles.roleLine}>
           Android · Compose · Design Systems · {identity.location}

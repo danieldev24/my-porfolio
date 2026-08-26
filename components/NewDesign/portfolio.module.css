@@ -286,6 +286,26 @@
   opacity: 0.86;
 }
 
+.orbitRing {
+  position: absolute;
+  z-index: 1;
+  width: 18rem;
+  height: 18rem;
+  border: 1px dashed var(--accent);
+  border-radius: 50%;
+  animation: orbit 18s linear infinite;
+}
+
+.orbitRing::before {
+  position: absolute;
+  top: -0.25rem;
+  left: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  content: '';
+  background: var(--accent);
+}
+
 .deviceFrame {
   position: relative;
   z-index: 2;
@@ -313,6 +333,18 @@
   justify-self: end;
 }
 
+.visualCoordinate {
+  position: absolute;
+  z-index: 3;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.25rem 0.375rem;
+  color: var(--faint);
+  background: var(--panel);
+  font-family: var(--mono);
+  font-size: 0.5625rem;
+}
+
 .heroCopy {
   padding-top: 2rem;
 }
@@ -336,6 +368,15 @@
   color: var(--accent);
   font-family: var(--serif);
   font-weight: 500;
+}
+
+.wordSlot {
+  display: inline-grid;
+  min-width: 8.5ch;
+}
+
+.cyclingWord {
+  grid-area: 1 / 1;
 }
 
 .roleLine {
@@ -1080,6 +1121,11 @@
     height: 12rem;
   }
 
+  .orbitRing {
+    width: 14rem;
+    height: 14rem;
+  }
+
   .deviceFrame {
     width: 7rem;
     height: 11rem;
@@ -1197,5 +1243,24 @@
     grid-column: 1 / -1;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--line);
+  }
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbitRing {
+    animation: none;
+  }
+
+  .projectCard,
+  .craftItems button,
+  .railNav a,
+  .writingList a {
+    transition: none;
   }
 }
