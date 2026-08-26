@@ -1,4 +1,5 @@
 import { useColorMode } from '@chakra-ui/react'
+import CraftKit from './CraftKit'
 import ExperienceIndex from './ExperienceIndex'
 import MobileHeader from './MobileHeader'
 import NavigationRail from './NavigationRail'
@@ -30,6 +31,7 @@ const PortfolioShell = ({ articles }: PortfolioShellProps): JSX.Element => {
           <ExperienceIndex />
           <ProjectGrid />
           <WritingIndex articles={articles} />
+          <CraftKit />
         </main>
       </div>
     </div>

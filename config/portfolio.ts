@@ -14,6 +14,13 @@ export type ProjectItem = {
   url: string
 }
 
+export type CraftItem = {
+  code: string
+  detail: string
+  label: string
+  note: string
+}
+
 export const portfolio = {
   identity: {
     name: 'Hoang Son',
@@ -99,4 +106,34 @@ export const portfolio = {
       url: 'https://github.com/danieldev24/Tesla-Connect',
     },
   ] as ProjectItem[],
+  craft: [
+    {
+      code: '01',
+      label: 'Compose systems',
+      note: 'Reusable UI with a product point of view.',
+      detail:
+        'Component APIs, tokens, variants, guidance, previews, and snapshot tests that let feature teams move without losing consistency.',
+    },
+    {
+      code: '02',
+      label: 'Mobile architecture',
+      note: 'Boundaries that survive real product pressure.',
+      detail:
+        'Kotlin, clean architecture, predictable state, and pragmatic module boundaries designed for change rather than diagrams.',
+    },
+    {
+      code: '03',
+      label: 'Cross-platform',
+      note: 'Share decisions, not every line.',
+      detail:
+        'Hands-on work across React Native, Flutter, and Kotlin Multiplatform with platform fit kept in the foreground.',
+    },
+    {
+      code: '04',
+      label: 'Quality loops',
+      note: 'Confidence built into the workflow.',
+      detail:
+        'Visual regression checks, release diagnostics, production support, and automation that shorten the distance from signal to fix.',
+    },
+  ] as CraftItem[],
 }
