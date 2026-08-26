@@ -1,89 +1,149 @@
 import { useEffect, useRef } from 'react'
+import {
+  MAX_TAGS,
+  randomBetween,
+  scrambleWord,
+  SPAWN_INTERVAL,
+} from './cursorTrail.utils'
 import styles from './portfolio.module.css'
 import { portfolio } from 'config/portfolio'
 
-type Point = {
+type TrailTag = {
+  bornAt: number
+  decodeDuration: number
+  driftX: number
+  element: HTMLSpanElement
+  fadeDuration: number
+  fallDistance: number
+  lastScrambleAt: number
+  rotation: number
+  word: string
   x: number
   y: number
 }
 
-const tagOffsets: Point[] = [
-  { x: -112, y: -58 },
-  { x: 20, y: -82 },
-  { x: 96, y: -34 },
-  { x: -126, y: 10 },
-  { x: 112, y: 34 },
-  { x: -72, y: 66 },
-  { x: 24, y: 82 },
-  { x: 126, y: -92 },
-]
-
-const clamp = (value: number, minimum: number, maximum: number): number =>
-  Math.min(Math.max(value, minimum), maximum)
-
 const CursorSkillTrail = (): JSX.Element => {
-  const tagRefs = useRef<Array<HTMLSpanElement | null>>([])
+  const layerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const layer = layerRef.current
+
     if (
-      !window.matchMedia('(hover: hover) and (pointer: fine)').matches ||
+      !layer ||
+      !window.matchMedia(
+        '(min-width: 768px) and (hover: hover) and (pointer: fine)'
+      ).matches ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
     ) {
       return undefined
     }
 
-    const points: Point[] = portfolio.identity.skills.map(() => ({
-      x: 0,
-      y: 0,
-    }))
-    const pointer: Point = { x: 0, y: 0 }
+    const palette = [
+      styles.cursorCoral,
+      styles.cursorMustard,
+      styles.cursorSage,
+      styles.cursorLavender,
+      styles.cursorTeal,
+      styles.cursorBlue,
+      styles.cursorSalmon,
+    ]
+    const tags: TrailTag[] = []
     let animationFrame = 0
-    let hasPointer = false
-    let lastMoveTime = 0
+    let lastSpawnAt = 0
+    let lastWordIndex = -1
+    let previousPointer = { x: Number.NaN, y: Number.NaN }
 
-    const animate = (time: number): void => {
-      const idleTime = time - lastMoveTime
-      const opacity = clamp(1 - Math.max(idleTime - 240, 0) / 560, 0, 1)
-
-      points.forEach((point, index) => {
-        const offset = tagOffsets[index]
-        const follow = 0.2 - index * 0.014
-        const targetX = pointer.x + offset.x
-        const targetY = pointer.y + offset.y
-
-        point.x += (targetX - point.x) * follow
-        point.y += (targetY - point.y) * follow
-
-        const tag = tagRefs.current[index]
-        if (tag) {
-          const rotation = (index % 2 === 0 ? -1 : 1) * (index + 1) * 0.35
-          tag.style.opacity = String(opacity * (1 - index * 0.045))
-          tag.style.transform = `translate3d(${point.x.toFixed(
-            2
-          )}px, ${point.y.toFixed(
-            2
-          )}px, 0) translate(-50%, -50%) rotate(${rotation}deg)`
-        }
-      })
-
-      if (opacity > 0) {
-        animationFrame = window.requestAnimationFrame(animate)
-      } else {
-        animationFrame = 0
-      }
+    const removeTag = (index: number): void => {
+      tags[index].element.remove()
+      tags.splice(index, 1)
     }
 
-    const showTrail = (event: PointerEvent): void => {
-      pointer.x = event.clientX
-      pointer.y = event.clientY
-      lastMoveTime = window.performance.now()
+    const animate = (time: number): void => {
+      for (let index = tags.length - 1; index >= 0; index -= 1) {
+        const tag = tags[index]
+        const elapsed = time - tag.bornAt
+        const lifetime = tag.decodeDuration + tag.fadeDuration
 
-      if (!hasPointer) {
-        points.forEach((point, index) => {
-          point.x = pointer.x + tagOffsets[index].x
-          point.y = pointer.y + tagOffsets[index].y
-        })
-        hasPointer = true
+        if (elapsed >= lifetime) {
+          removeTag(index)
+          continue
+        }
+
+        const decodeProgress = Math.min(elapsed / tag.decodeDuration, 1)
+        const resolvedCharacters = Math.min(
+          Math.floor(decodeProgress * (tag.word.length + 1)),
+          tag.word.length
+        )
+
+        if (time - tag.lastScrambleAt >= 38) {
+          tag.element.textContent = scrambleWord(tag.word, resolvedCharacters)
+          tag.element.dataset.phase =
+            resolvedCharacters === tag.word.length ? 'decoded' : 'scrambling'
+          tag.lastScrambleAt = time
+        }
+
+        const driftProgress = Math.max(
+          (elapsed - tag.decodeDuration) / tag.fadeDuration,
+          0
+        )
+        const x = tag.x + tag.driftX * driftProgress
+        const y =
+          tag.y +
+          tag.fallDistance * driftProgress * driftProgress +
+          8 * driftProgress
+        const opacity =
+          elapsed < tag.decodeDuration ? 0.98 : 0.98 * (1 - driftProgress)
+
+        tag.element.style.opacity = opacity.toFixed(3)
+        tag.element.style.transform = `translate3d(${x.toFixed(
+          2
+        )}px, ${y.toFixed(2)}px, 0) translate(-50%, -50%) rotate(${(
+          tag.rotation * driftProgress
+        ).toFixed(2)}deg)`
+      }
+
+      animationFrame = tags.length ? window.requestAnimationFrame(animate) : 0
+    }
+
+    const spawnTag = (event: PointerEvent, time: number): void => {
+      let wordIndex = Math.floor(
+        Math.random() * portfolio.identity.skills.length
+      )
+      if (wordIndex === lastWordIndex) {
+        wordIndex = (wordIndex + 1) % portfolio.identity.skills.length
+      }
+      lastWordIndex = wordIndex
+
+      const word = portfolio.identity.skills[wordIndex].toUpperCase()
+      const element = document.createElement('span')
+      const paletteClass = palette[Math.floor(Math.random() * palette.length)]
+      const decodeDuration = randomBetween(320, 580)
+
+      element.className = `${styles.cursorSkill} ${paletteClass}`
+      element.textContent = scrambleWord(word, 0)
+      element.dataset.cursorTag = ''
+      element.dataset.phase = 'scrambling'
+      element.dataset.word = word
+      element.style.opacity = '0.98'
+      element.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`
+      layer.appendChild(element)
+
+      tags.push({
+        bornAt: time,
+        decodeDuration,
+        driftX: randomBetween(-34, 34),
+        element,
+        fadeDuration: randomBetween(1600, 2700),
+        fallDistance: randomBetween(48, 96),
+        lastScrambleAt: time,
+        rotation: randomBetween(-5, 5),
+        word,
+        x: event.clientX,
+        y: event.clientY,
+      })
+
+      if (tags.length > MAX_TAGS) {
+        removeTag(0)
       }
 
       if (!animationFrame) {
@@ -91,36 +151,40 @@ const CursorSkillTrail = (): JSX.Element => {
       }
     }
 
-    const hideTrail = (event: PointerEvent): void => {
-      if (!event.relatedTarget) {
-        lastMoveTime = 0
+    const handlePointerMove = (event: PointerEvent): void => {
+      const time = window.performance.now()
+      const isFirstMove = Number.isNaN(previousPointer.x)
+      const travelled = Math.hypot(
+        event.clientX - previousPointer.x,
+        event.clientY - previousPointer.y
+      )
+
+      if (
+        isFirstMove ||
+        (time - lastSpawnAt >= SPAWN_INTERVAL && travelled >= 8)
+      ) {
+        spawnTag(event, time)
+        lastSpawnAt = time
+        previousPointer = { x: event.clientX, y: event.clientY }
       }
     }
 
-    window.addEventListener('pointermove', showTrail, { passive: true })
-    window.addEventListener('pointerout', hideTrail, { passive: true })
+    window.addEventListener('pointermove', handlePointerMove, { passive: true })
 
     return () => {
-      window.removeEventListener('pointermove', showTrail)
-      window.removeEventListener('pointerout', hideTrail)
+      window.removeEventListener('pointermove', handlePointerMove)
       window.cancelAnimationFrame(animationFrame)
+      tags.forEach((tag) => tag.element.remove())
     }
   }, [])
 
   return (
-    <div className={styles.cursorTrail} data-cursor-trail aria-hidden="true">
-      {portfolio.identity.skills.map((skill, index) => (
-        <span
-          key={skill}
-          ref={(element) => {
-            tagRefs.current[index] = element
-          }}
-          className={styles.cursorSkill}
-        >
-          {skill}
-        </span>
-      ))}
-    </div>
+    <div
+      ref={layerRef}
+      className={styles.cursorTrail}
+      data-cursor-trail
+      aria-hidden="true"
+    />
   )
 }
 
