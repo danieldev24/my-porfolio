@@ -43,6 +43,16 @@ export const portfolio = {
       { label: 'Current focus', value: 'Compose design systems' },
       { label: 'Working across', value: 'Product · Design · Engineering' },
     ],
+    skills: [
+      'Kotlin',
+      'Jetpack Compose',
+      'Android',
+      'Design Systems',
+      'KMP',
+      'Flutter',
+      'React Native',
+      'Clean Architecture',
+    ],
   },
   social: [
     {
