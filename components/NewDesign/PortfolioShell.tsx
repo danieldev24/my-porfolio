@@ -6,6 +6,7 @@ import MobileHeader from './MobileHeader'
 import NavigationRail from './NavigationRail'
 import ProfileIntro from './ProfileIntro'
 import ProjectGrid from './ProjectGrid'
+import SectionReveal from './SectionReveal'
 import WritingIndex from './WritingIndex'
 import styles from './portfolio.module.css'
 import { Article } from 'types/article'
@@ -29,11 +30,21 @@ const PortfolioShell = ({ articles }: PortfolioShellProps): JSX.Element => {
 
         <main id="main-content" className={styles.main}>
           <ProfileIntro />
-          <ExperienceIndex />
-          <ProjectGrid />
-          <WritingIndex articles={articles} />
-          <CraftKit />
-          <ContactFooter />
+          <SectionReveal>
+            <ExperienceIndex />
+          </SectionReveal>
+          <SectionReveal>
+            <ProjectGrid />
+          </SectionReveal>
+          <SectionReveal>
+            <WritingIndex articles={articles} />
+          </SectionReveal>
+          <SectionReveal>
+            <CraftKit />
+          </SectionReveal>
+          <SectionReveal>
+            <ContactFooter />
+          </SectionReveal>
         </main>
       </div>
     </div>
